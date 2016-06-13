@@ -135,7 +135,7 @@
         var tl = new TimelineLite({
             delay: 2,
             onComplete: function() {
-                this.restart()
+                this.restart();
             }
         });
 
@@ -144,7 +144,7 @@
             .to(box, 2, { text: array[3], ease: Linear.easeNone })
             .to(box, 2, { text: array[4], ease: Linear.easeNone })
             .to(box, 2, { text: array[5], ease: Linear.easeNone })
-            .to(box, 2.5, { text: array[6], ease: Linear.easeNone })
+            .to(box, 2.5, { text: array[6], ease: Linear.easeNone });
     });
 
     // Do stuff on window load - Strict
