@@ -12,6 +12,10 @@ h1 {
     margin: 0;
 }
 
-.skills {
+#skills {
     @include visually-hidden;
+}
+
+#skill-switch {
+    color: $black;
 }

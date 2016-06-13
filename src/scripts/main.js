@@ -73,37 +73,6 @@
             // Do stuff
         }, false);
 
-        // Slick slider variables
-        var $status = $('.paging-info'),
-            $lazy = $('.lazy-slider');
-
-        // Slick slider counters
-        $lazy.on('init reInit afterChange', function(event, slick, currentSlide) {
-            //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
-            var i = (currentSlide ? currentSlide : 0) + 1;
-            $status.text(i + '/' + slick.slideCount);
-        });
-        // Slick Slider
-        $lazy.slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            infinite: true,
-            speed: 600,
-            lazyLoad: 'progressive',
-            dots: true,
-            responsive: [{
-                breakpoint: 768,
-                settings: {
-                    dots: false
-                }
-            }, {
-                breakpoint: 380,
-                settings: {
-                    dots: false
-                }
-            }]
-        });
-
         // Fixed position navigation bar when user scrolls below #navbar
         function fixnav() {
             var $navBar = $('#navbar');
@@ -153,8 +122,30 @@
         if (preliminaryTouch) {
             $('body').addClass('is-touch-device');
         }
-    });
 
+        // Skill Switch - gets list elements and adds to array
+        var array = $('#skills li').map(function() {
+            return $.trim($(this).text());
+        }).get();
+            console.log(array);
+
+        // GSAP Animations
+        var box = $("#skill-switch");
+
+        var tl = new TimelineLite({
+            delay: 2,
+            onComplete: function() {
+                this.restart()
+            }
+        });
+
+        tl.to(box, 1, { text: array[1], ease: Linear.easeNone })
+            .to(box, 1.5, { text: array[2], ease: Linear.easeNone })
+            .to(box, 2, { text: array[3], ease: Linear.easeNone })
+            .to(box, 2, { text: array[4], ease: Linear.easeNone })
+            .to(box, 2, { text: array[5], ease: Linear.easeNone })
+            .to(box, 2.5, { text: array[6], ease: Linear.easeNone })
+    });
 
     // Do stuff on window load - Strict
     $(window).load(function() {
