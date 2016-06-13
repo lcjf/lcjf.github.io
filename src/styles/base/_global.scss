@@ -1,9 +1,9 @@
 body {
     @include font-size(16px);
     @include font-smoothing;
-    @include arial(500);
-    background-color: $grey;
-    color: $black;
+    @include roboto(400);
+    background-color: $primary-color;
+    color: $white;
 }
 
 // Copy
@@ -73,6 +73,7 @@ p {
 }
 
 // Links with expanding underline animation
+nav li,
 .animate-inline {
     display: inline-block;
     position: relative;

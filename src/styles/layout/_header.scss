@@ -1,10 +1,15 @@
 // Site Header
 .site-header {
-    float: left;
-    font-weight: 400;
+    background-color: $primary-color-dark;
+    display: flex;
+    align-items: flex-end;
+    font-weight: 500;
     position: relative;
     width: 100%;
+    padding: $gutter;
+    box-shadow: -2px 0 10px 0px rgba(0,0,0,0.5);
     nav {
+        margin-left: auto;
         @include bp-md {
             @include font-size(14px);
             @include bp-sm {
@@ -13,38 +18,34 @@
         }
         ul {
             @include font-size(18px);
-            align-items: center;
+            align-items: bottom;
             display: flex;
-            justify-content: space-around;
-            padding: .5em;
+            justify-content: flex-end;
+        }
+        li {
+            padding: 0 $gutter 0 0;
+            &:last-child {
+                padding: 0;
+            }
         }
         a {
             color: $white;
         }
     }
-    .current-menu-item a, // Wordpress class
     .active a {
         //color: active-colour;
     }
 }
 
-.social-wrapper {
-    align-items: center;
-    display: flex;
-    justify-content: flex-end;
-    padding: 0 10px;
-}
-
-.site-header-top {
-    background-color: $white;
+.details {
+    @include font-size(18px);
     float: left;
-    position: relative;
-    width: 100%;
-}
-
-.site-header-bottom {
-    background-color: $black;
-    float: left;
-    position: relative;
-    width: 100%;
+    margin-left: $gutter;
+    span {
+        float: left;
+        clear: both;
+        &:last-child {
+            color: $primary-color-light;
+        }
+    }
 }
