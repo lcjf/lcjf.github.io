@@ -127,24 +127,23 @@
         var array = $('#skills li').map(function() {
             return $.trim($(this).text());
         }).get();
-            console.log(array);
 
         // GSAP Animations
         var box = $("#skill-switch");
+        var delay = 1.5;
 
         var tl = new TimelineLite({
-            delay: 2,
             onComplete: function() {
                 this.restart();
             }
         });
 
-        tl.to(box, 1, { text: array[1], ease: Linear.easeNone })
-            .to(box, 1.5, { text: array[2], ease: Linear.easeNone })
-            .to(box, 2, { text: array[3], ease: Linear.easeNone })
-            .to(box, 2, { text: array[4], ease: Linear.easeNone })
-            .to(box, 2, { text: array[5], ease: Linear.easeNone })
-            .to(box, 2.5, { text: array[6], ease: Linear.easeNone });
+        tl.to(box, .75, { text: array[0], delay: delay, ease: Linear.easeNone })
+            .to(box, .5, { text: array[1], delay: delay, ease: Linear.easeNone })
+            .to(box, 1, { text: array[2], delay: delay, ease: Linear.easeNone })
+            .to(box, 1.5, { text: array[3], delay: delay, ease: Linear.easeNone })
+            .to(box, 1, { text: array[4], delay: delay, ease: Linear.easeNone })
+            .to(box, 1, { text: array[5], delay: delay, ease: Linear.easeNone })
     });
 
     // Do stuff on window load - Strict
